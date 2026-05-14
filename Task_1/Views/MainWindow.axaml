@@ -15,6 +15,22 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Border Margin="20" Padding="20" BorderBrush="Gray" BorderThickness="1">
+        <StackPanel>
+            <TextBlock Text="Contact"/>
+            <Label Content="Name"/>
+            <TextBox HorizontalAlignment="Left" Width="300" x:Name="NameTextBox" Text="{Binding Name}"/>
+            <Label Content="Phone number"/>
+            <TextBox HorizontalAlignment="Left" Width="300" Text="{Binding Phone}"/>
+            <Label Content="Email address"/>
+            <TextBox HorizontalAlignment="Left" Width="300" Text="{Binding Email}"/>
+            <StackPanel Orientation="Horizontal" Margin="20">
+                <Button Content="Clear" Command="{Binding ClearCommand}"/>
+                <Button Content="Exit" Command="{Binding ExitCommand}"/>
+                <Button Content="Enter" Command="{Binding CreateGreetingCommand}"/>
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Left" Width="300" Text="{Binding ResultText}"/>
+        </StackPanel>
+    </Border>
 
 </Window>
